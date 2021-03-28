@@ -19,11 +19,10 @@ export default function Home() {
     <>
       <Head>
         <title>{t("common:appName")}</title>
+        <meta name="keywords" content="Pokedex" />
       </Head>
 
-      <div className="container mx-auto min-h-screen flex flex-col justify-center items-center">
-        <div className="flex">Hello World!</div>
-      </div>
+      <div className="flex">Hello World!</div>
     </>
   );
 }

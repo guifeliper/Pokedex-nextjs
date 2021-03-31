@@ -8,4 +8,7 @@ export interface Params {
 
 export interface IPokemon {
   name: string;
+  image: string;
+  hp: string;
+  attack: string;
 }

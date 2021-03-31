@@ -16,7 +16,7 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemons }) => {
   return (
     <div>
       <h1 className="text-3xl text-blue-800 m-2 font-extrabold">All Pokemons</h1>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         {pokemons && pokemons.map((pokemon: IPokemon) => <Card key={generateUniqueID()} {...pokemon} />)}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Logo } from "svgr";
+import { LogoIcon } from "svgr";
 // import { Container } from './styles';
 
 const NavBar: React.FC = () => {
@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
           <div className="flex items-center justify-between h-16 cursor-pointer">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Logo height={50} />
+                <LogoIcon height={50} />
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">

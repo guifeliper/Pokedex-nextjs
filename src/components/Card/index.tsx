@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 
 import { CardProps, Params } from "./types";
+import { HeartIcon } from "svgr";
 
 const fetchPokemonInfo = async (props: Params) => {
   const [, { name }] = props.queryKey;
@@ -17,12 +18,13 @@ const fetchPokemonInfo = async (props: Params) => {
 };
 
 const Card: React.FC<CardProps> = ({ name }) => {
-  const { data } = useQuery(["pokemon", { name }], fetchPokemonInfo, {
+  const { data, status } = useQuery(["pokemon", { name }], fetchPokemonInfo, {
     keepPreviousData: true,
   });
 
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+      {status === "loading" && <div className="flex p-4">Loading...</div>}
       <img className="bg-cover bg-center h-56 p-4" src={data?.image} alt={data?.name} loading="lazy" />
       <div className="p-4">
         <p className="uppercase tracking-wide text-sm font-bold text-gray-700">{data?.name}</p>
@@ -30,14 +32,12 @@ const Card: React.FC<CardProps> = ({ name }) => {
       <div className="flex p-4 border-t border-gray-300 text-gray-700">
         <div className="flex-1 inline-flex items-center">
           <p>
-            <span className="text-gray-900 font-bold">{data?.hp}</span>
-            <span>HP</span>
+            <span className="text-gray-900 font-bold">{data?.hp}</span> <span>HP</span>
           </p>
         </div>
         <div className="flex-1 inline-flex items-center">
           <p>
-            <span className="text-gray-900 font-bold">{data?.attack}</span>
-            <span>Attack</span>
+            <span className="text-gray-900 font-bold">{data?.attack}</span> <span>Attack</span>
           </p>
         </div>
       </div>

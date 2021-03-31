@@ -22,7 +22,6 @@ export default function Home() {
         <meta name="keywords" content="Pokedex" />
       </Head>
 
-      <div className="flex">Hello World!</div>
       <div className="flex">
         <Link href="/pokedex">
           <div className="cursor-pointer shadow-md bg-blue-500 py-4 px-6 rounded-lg text-blue-100 font-bold hover:bg-blue-600 hover:underline focus:ring-2 ring-offset-2 ring-blue-600">

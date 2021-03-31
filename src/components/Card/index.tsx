@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ name }) => {
 
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-      <img className="bg-cover bg-center h-56 p-4" src={data?.image} alt="Bulbasaur" loading="lazy" />
+      <img className="bg-cover bg-center h-56 p-4" src={data?.image} alt={data?.name} loading="lazy" />
       <div className="p-4">
         <p className="uppercase tracking-wide text-sm font-bold text-gray-700">{data?.name}</p>
       </div>
